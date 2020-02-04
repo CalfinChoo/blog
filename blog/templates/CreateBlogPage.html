@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Create Blog {% endblock %}
+{% block body %}
+{% if m %}
+<h5>&#9888; {{m}}</h5>
+{% endif %}
+<h1> Create Blog Page </h1>
+    <form action = "/createHelper">
+      Blog Title:<br>
+      <input type="text" name="title"><br>
+      Write Your Blog Below:<br>
+      <textarea
+	rows = "5"
+	cols = "60"
+	name = "body"></textarea><br>
+      <input type="submit" value="Done">
+    </form>
+    <form action = "/Profile">
+      <input type="submit" value="Back">
+    </form>
+{% endblock %}

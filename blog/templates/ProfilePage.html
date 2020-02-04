@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} Main Page {% endblock %}
+{% block body %}
+<h1> Profile Page </h1>
+  <p><b>Username: </b>{{user}}</p>
+  <form action = "/CreateBlog">
+    <input type="submit" value="Create New Blog">
+  </form>
+  <form action = "/MyBlogs">
+    <input type="submit" value="View My Blogs">
+  </form>
+  <form action = "/Main">
+    <input type="submit" value="Home">
+  </form>
+  <form action = "/auth2">
+    <input type="submit" name ="delete" value="Delete My Account" onclick="return confirm('Are you sure you want to delete your account?');">
+  </form>
+{% endblock %}

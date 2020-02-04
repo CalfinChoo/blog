@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Main Page {% endblock %}
+{% block body %}
+<h1> Main Page </h1>
+  {% if m %}
+  <p>&#9888; {{m}} </p>
+  {% endif %}
+    <form action = "/Profile">
+      <input type="submit" value="Profile">
+    </form>
+    <form action = "/auth2">
+      <input type="submit" name="logout" value="Log Out">
+    </form>
+    <table style="width:50%" border="1">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+    {% for i in smth %}
+    <tr>
+      <td>
+	<form action = "/Blog">
+        <input type="hidden" id="id" name="id" value="{{i[0]}}">
+        <button type="submit">{{i[2]}}</button>
+	</form>
+      </td>
+      <td>{{i[1]}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
